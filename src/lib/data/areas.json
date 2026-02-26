@@ -1,0 +1,42 @@
+[
+	{
+		"id": "living_room",
+		"name": "Living Room",
+		"nameZhHK": "客廳",
+		"icon": "🛋️",
+		"difficulty": "easy",
+		"background": "/assets/areas/room.png",
+		"gradient": "linear-gradient(180deg, #F5E6CA 0%, #E8D5B0 40%, #D4C49A 80%, #C4B48A 100%)",
+		"scenery": ["🛋️", "📺", "🪴", "🖼️", "💡", "📚", "🕯️", "🎮"]
+	},
+	{
+		"id": "bathroom",
+		"name": "Bathroom",
+		"nameZhHK": "浴室",
+		"icon": "🚿",
+		"difficulty": "easy",
+		"background": "/assets/areas/room.png",
+		"gradient": "linear-gradient(180deg, #E3F2FD 0%, #BBDEFB 40%, #90CAF9 80%, #64B5F6 100%)",
+		"scenery": ["🛁", "🚿", "🧼", "🪥", "🧴", "🪞", "🚽", "🧹"]
+	},
+	{
+		"id": "kitchen",
+		"name": "Kitchen",
+		"nameZhHK": "廚房",
+		"icon": "🍳",
+		"difficulty": "medium",
+		"background": "/assets/areas/room.png",
+		"gradient": "linear-gradient(180deg, #FFF8E1 0%, #FFECB3 40%, #FFE082 80%, #FFD54F 100%)",
+		"scenery": ["🍳", "🥘", "🧊", "🍽️", "☕", "🥄", "🫙", "🧃"]
+	},
+	{
+		"id": "bedroom",
+		"name": "Bedroom",
+		"nameZhHK": "臥室",
+		"icon": "🛏️",
+		"difficulty": "medium",
+		"background": "/assets/areas/room.png",
+		"gradient": "linear-gradient(180deg, #F3E5F5 0%, #E1BEE7 40%, #CE93D8 80%, #BA68C8 100%)",
+		"scenery": ["🛏️", "🧸", "📖", "🪟", "⏰", "🎒", "🎵", "💤"]
+	}
+]

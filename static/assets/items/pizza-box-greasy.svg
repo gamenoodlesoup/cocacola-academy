@@ -1,0 +1,36 @@
+<svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Greasy Pizza Box - open cardboard box with grease stains -->
+<defs>
+  <filter id="grain-pb" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox">
+    <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="3" seed="37" stitchTiles="stitch" result="noise"/>
+    <feColorMatrix in="noise" type="saturate" values="0" result="grayNoise"/>
+    <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply" result="textured"/>
+    <feOffset dx="2" dy="3" in="SourceAlpha" result="shadowOffset"/>
+    <feGaussianBlur in="shadowOffset" stdDeviation="2" result="shadowBlur"/>
+    <feColorMatrix in="shadowBlur" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" result="shadow"/>
+    <feMerge>
+      <feMergeNode in="shadow"/>
+      <feMergeNode in="textured"/>
+    </feMerge>
+  </filter>
+</defs>
+<g filter="url(#grain-pb)">
+  <!-- Box bottom -->
+  <path d="M12 42 L30 82 L105 82 L108 42 Z" fill="#D4A84B" stroke="#1A1A1A" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Box lid (open, tilted back) -->
+  <path d="M12 42 L8 10 L100 6 L108 42" fill="#E5BC63" stroke="#1A1A1A" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Fold line -->
+  <line x1="12" y1="42" x2="108" y2="42" stroke="#1A1A1A" stroke-width="3.5"/>
+  <!-- Grease stains on bottom -->
+  <ellipse cx="50" cy="58" rx="14" ry="8" fill="#C49530" opacity="0.6"/>
+  <ellipse cx="75" cy="65" rx="10" ry="6" fill="#C49530" opacity="0.5"/>
+  <ellipse cx="60" cy="72" rx="8" ry="5" fill="#B8872A" opacity="0.4"/>
+  <!-- Pizza residue/cheese -->
+  <path d="M40 55 C42 52, 48 54, 46 58" stroke="#F8C226" stroke-width="2" fill="none" opacity="0.5"/>
+  <!-- Lid text/logo area -->
+  <rect x="30" y="16" width="50" height="16" rx="2" fill="#DF1725" stroke="#1A1A1A" stroke-width="2.5" opacity="0.8"/>
+  <line x1="38" y1="24" x2="72" y2="24" stroke="#FCE9CC" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Grease on lid -->
+  <circle cx="85" cy="28" r="6" fill="#C49530" opacity="0.3"/>
+</g>
+</svg>

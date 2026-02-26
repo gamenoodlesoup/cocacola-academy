@@ -1,0 +1,37 @@
+<svg width="80" height="110" viewBox="0 0 80 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Light Bulb - classic incandescent bulb -->
+<defs>
+  <filter id="grain-lb" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox">
+    <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="3" seed="99" stitchTiles="stitch" result="noise"/>
+    <feColorMatrix in="noise" type="saturate" values="0" result="grayNoise"/>
+    <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply" result="textured"/>
+    <feOffset dx="2" dy="3" in="SourceAlpha" result="shadowOffset"/>
+    <feGaussianBlur in="shadowOffset" stdDeviation="2" result="shadowBlur"/>
+    <feColorMatrix in="shadowBlur" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" result="shadow"/>
+    <feMerge>
+      <feMergeNode in="shadow"/>
+      <feMergeNode in="textured"/>
+    </feMerge>
+  </filter>
+</defs>
+<g filter="url(#grain-lb)">
+  <!-- Bulb glass -->
+  <path d="M40 8 C20 8, 8 28, 8 45 C8 58, 16 66, 24 72 L24 78 L56 78 L56 72 C64 66, 72 58, 72 45 C72 28, 60 8, 40 8Z" fill="#FCE9CC" stroke="#1A1A1A" stroke-width="4" stroke-linejoin="round" opacity="0.9"/>
+  <!-- Glass highlight -->
+  <path d="M28 20 C24 28, 22 38, 24 48" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <!-- Filament -->
+  <path d="M34 55 L34 40 C34 36, 38 34, 40 38 L40 42 C40 46, 44 44, 44 40 L44 55" stroke="#F8C226" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Filament supports -->
+  <line x1="34" y1="55" x2="34" y2="68" stroke="#939598" stroke-width="1.5"/>
+  <line x1="44" y1="55" x2="44" y2="68" stroke="#939598" stroke-width="1.5"/>
+  <!-- Metal base -->
+  <rect x="24" y="78" width="32" height="6" rx="1" fill="#A7A9AC" stroke="#1A1A1A" stroke-width="3.5"/>
+  <!-- Base thread lines -->
+  <rect x="26" y="84" width="28" height="5" rx="1" fill="#939598" stroke="#1A1A1A" stroke-width="3"/>
+  <line x1="26" y1="87" x2="54" y2="87" stroke="#1A1A1A" stroke-width="1.5"/>
+  <!-- Base tip -->
+  <rect x="30" y="89" width="20" height="6" rx="2" fill="#808285" stroke="#1A1A1A" stroke-width="3"/>
+  <!-- Contact point -->
+  <circle cx="40" cy="98" r="4" fill="#6D6E71" stroke="#1A1A1A" stroke-width="2.5"/>
+</g>
+</svg>

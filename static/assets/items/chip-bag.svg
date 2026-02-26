@@ -1,0 +1,35 @@
+<svg width="85" height="110" viewBox="0 0 85 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Chip Bag - crinkly metallic snack bag -->
+<defs>
+  <filter id="grain-cb" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox">
+    <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="3" seed="61" stitchTiles="stitch" result="noise"/>
+    <feColorMatrix in="noise" type="saturate" values="0" result="grayNoise"/>
+    <feBlend in="SourceGraphic" in2="grayNoise" mode="multiply" result="textured"/>
+    <feOffset dx="2" dy="3" in="SourceAlpha" result="shadowOffset"/>
+    <feGaussianBlur in="shadowOffset" stdDeviation="2" result="shadowBlur"/>
+    <feColorMatrix in="shadowBlur" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" result="shadow"/>
+    <feMerge>
+      <feMergeNode in="shadow"/>
+      <feMergeNode in="textured"/>
+    </feMerge>
+  </filter>
+</defs>
+<g filter="url(#grain-cb)">
+  <!-- Bag body -->
+  <path d="M18 20 C16 18, 14 22, 12 35 C10 55, 10 70, 14 85 C16 90, 20 92, 25 94 L60 94 C65 92, 70 90, 72 85 C76 70, 76 55, 74 35 C72 22, 70 18, 68 20" fill="#DF1725" stroke="#1A1A1A" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Top crinkled seal -->
+  <path d="M18 20 C22 14, 28 10, 32 12 C36 8, 40 8, 43 10 C46 8, 52 8, 55 12 C58 10, 64 14, 68 20" fill="#B01420" stroke="#1A1A1A" stroke-width="3.5" stroke-linejoin="round"/>
+  <!-- Label area -->
+  <rect x="20" y="35" width="46" height="30" rx="3" fill="#F8C226" stroke="#1A1A1A" stroke-width="2.5"/>
+  <!-- Brand text lines -->
+  <line x1="26" y1="44" x2="60" y2="44" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+  <line x1="30" y1="52" x2="56" y2="52" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  <!-- Chip illustration circle -->
+  <circle cx="43" cy="75" r="10" fill="#F8C226" stroke="#1A1A1A" stroke-width="2" opacity="0.7"/>
+  <!-- Crinkle lines on sides -->
+  <path d="M14 45 C12 48, 13 52, 11 55" stroke="#B01420" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <path d="M72 50 C74 53, 73 57, 75 60" stroke="#B01420" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <!-- Bottom seal -->
+  <line x1="20" y1="92" x2="66" y2="92" stroke="#1A1A1A" stroke-width="2" stroke-dasharray="3 2"/>
+</g>
+</svg>

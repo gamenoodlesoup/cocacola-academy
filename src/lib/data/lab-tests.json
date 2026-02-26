@@ -1,0 +1,197 @@
+{
+	"tests": [
+		{
+			"id": "float",
+			"name": "Water Float Test",
+			"nameZhHK": "浮水測試",
+			"icon": "🫧",
+			"instruction": "Drop the sample into water and observe!",
+			"description": "Plastics less dense than water will float. This helps identify PE and PP.",
+			"steps": [
+				{ "id": "fill-water", "action": "hold", "instruction": "Hold to fill the bowl with water", "icon": "🚰", "duration": 1500 },
+				{ "id": "drop-sample", "action": "swipe-down", "instruction": "Swipe down to drop the sample", "icon": "👇" },
+				{ "id": "observe", "action": "tap", "instruction": "Tap to observe the result", "icon": "👀" }
+			]
+		},
+		{
+			"id": "bend",
+			"name": "Flexibility Test",
+			"nameZhHK": "彎曲測試",
+			"icon": "🔄",
+			"instruction": "Try to bend the sample and see what happens!",
+			"description": "Flexible plastics like PE and PP bend easily. Rigid ones like PET and PS snap.",
+			"steps": [
+				{ "id": "grab-sample", "action": "tap", "instruction": "Tap to grab the sample", "icon": "✊" },
+				{ "id": "bend-it", "action": "swipe-right", "instruction": "Swipe right to bend", "icon": "↪️" },
+				{ "id": "observe-bend", "action": "tap", "instruction": "Tap to check the result", "icon": "🔍" }
+			]
+		},
+		{
+			"id": "scratch",
+			"name": "Scratch Test",
+			"nameZhHK": "刮擦測試",
+			"icon": "💅",
+			"instruction": "Scratch the surface with a fingernail!",
+			"description": "Soft plastics like PE scratch easily. Hard plastics like PET and PS resist scratching.",
+			"steps": [
+				{ "id": "position-nail", "action": "tap", "instruction": "Tap to position your fingernail", "icon": "👆" },
+				{ "id": "scratch-it", "action": "swipe-right", "instruction": "Swipe right to scratch", "icon": "→" },
+				{ "id": "observe-scratch", "action": "tap", "instruction": "Tap to check the mark", "icon": "🔍" }
+			]
+		},
+		{
+			"id": "transparency",
+			"name": "Light Test",
+			"nameZhHK": "透光測試",
+			"icon": "💡",
+			"instruction": "Hold the sample up to a light!",
+			"description": "PET is very clear. HDPE is translucent. PP can be clear or opaque.",
+			"steps": [
+				{ "id": "pick-up", "action": "tap", "instruction": "Tap to pick up the sample", "icon": "✊" },
+				{ "id": "hold-to-light", "action": "hold", "instruction": "Hold up to the light source", "icon": "☀️", "duration": 2000 },
+				{ "id": "observe-light", "action": "tap", "instruction": "Tap to note the result", "icon": "📝" }
+			]
+		},
+		{
+			"id": "heat",
+			"name": "Heat Response",
+			"nameZhHK": "加熱測試",
+			"icon": "🔥",
+			"instruction": "Carefully warm the sample with hot water!",
+			"description": "Observe how the plastic reacts to heat. Some soften, some stay rigid.",
+			"steps": [
+				{ "id": "heat-water", "action": "hold", "instruction": "Hold to heat the water", "icon": "🫖", "duration": 2000 },
+				{ "id": "dip-sample", "action": "swipe-down", "instruction": "Swipe down to dip sample in hot water", "icon": "♨️" },
+				{ "id": "observe-heat", "action": "tap", "instruction": "Tap to observe changes", "icon": "🔍" }
+			]
+		}
+	],
+	"samples": [
+		{
+			"id": "sample-pet-clear",
+			"name": "Clear Container Piece",
+			"nameZhHK": "透明容器碎片",
+			"icon": "🧊",
+			"actualType": "PET",
+			"testResults": {
+				"float": "Sinks to the bottom",
+				"bend": "Rigid, doesn't bend easily. Cracks if forced.",
+				"scratch": "Hard surface — fingernail doesn't leave a mark",
+				"transparency": "Very clear and transparent, like glass",
+				"heat": "Softens slightly, tries to curl up"
+			},
+			"testOutcomes": {
+				"float": "sink",
+				"bend": "rigid",
+				"scratch": "hard",
+				"transparency": "clear",
+				"heat": "softens-curls"
+			}
+		},
+		{
+			"id": "sample-hdpe-white",
+			"name": "White Jug Fragment",
+			"nameZhHK": "白色壺碎片",
+			"icon": "🥛",
+			"actualType": "HDPE",
+			"testResults": {
+				"float": "Floats on the water surface!",
+				"bend": "Bends quite easily, feels waxy",
+				"scratch": "Fingernail leaves a white mark easily",
+				"transparency": "Not transparent — milky white, blocks light",
+				"heat": "Softens and becomes floppy"
+			},
+			"testOutcomes": {
+				"float": "float",
+				"bend": "flexible",
+				"scratch": "soft",
+				"transparency": "opaque",
+				"heat": "softens-floppy"
+			}
+		},
+		{
+			"id": "sample-pvc-rigid",
+			"name": "Stiff Pipe Section",
+			"nameZhHK": "硬管切片",
+			"icon": "🔧",
+			"actualType": "PVC",
+			"testResults": {
+				"float": "Sinks quickly — quite dense",
+				"bend": "Very rigid, won't bend. Snaps if forced hard.",
+				"scratch": "Moderately hard — light mark only",
+				"transparency": "Opaque, grey-white color",
+				"heat": "Stays rigid longer, may release a slight smell"
+			},
+			"testOutcomes": {
+				"float": "sink",
+				"bend": "rigid",
+				"scratch": "moderate",
+				"transparency": "opaque",
+				"heat": "stays-rigid"
+			}
+		},
+		{
+			"id": "sample-pp-flex",
+			"name": "Flexible Container Lid",
+			"nameZhHK": "軟蓋碎片",
+			"icon": "🫙",
+			"actualType": "PP",
+			"testResults": {
+				"float": "Floats! Very light in water.",
+				"bend": "Bends well, springs back. Very flexible hinge!",
+				"scratch": "Some resistance, slight mark possible",
+				"transparency": "Semi-translucent, slightly cloudy",
+				"heat": "Softens at higher temperature than PE"
+			},
+			"testOutcomes": {
+				"float": "float",
+				"bend": "flexible-springy",
+				"scratch": "moderate",
+				"transparency": "translucent",
+				"heat": "softens-higher-temp"
+			}
+		},
+		{
+			"id": "sample-ps-brittle",
+			"name": "Brittle White Piece",
+			"nameZhHK": "易碎白色碎片",
+			"icon": "💔",
+			"actualType": "PS",
+			"testResults": {
+				"float": "Sinks (or just barely floats if foamed/expanded)",
+				"bend": "Very brittle! Snaps and crumbles easily.",
+				"scratch": "Hard but surface can chip",
+				"transparency": "Can be clear (GP-PS) or white opaque (foam)",
+				"heat": "Softens easily, can crumble at low heat"
+			},
+			"testOutcomes": {
+				"float": "sinks-barely",
+				"bend": "brittle",
+				"scratch": "hard-chips",
+				"transparency": "variable",
+				"heat": "softens-crumbles"
+			}
+		},
+		{
+			"id": "sample-ldpe-soft",
+			"name": "Soft Film Piece",
+			"nameZhHK": "軟膜碎片",
+			"icon": "🛍️",
+			"actualType": "LDPE",
+			"testResults": {
+				"float": "Floats easily — very light",
+				"bend": "Extremely flexible, like a bag. Stretches!",
+				"scratch": "Very soft — nail digs in easily",
+				"transparency": "Somewhat translucent, frosted look",
+				"heat": "Softens quickly, gets sticky"
+			},
+			"testOutcomes": {
+				"float": "float",
+				"bend": "very-flexible",
+				"scratch": "very-soft",
+				"transparency": "translucent-frosted",
+				"heat": "softens-sticky"
+			}
+		}
+	]
+}

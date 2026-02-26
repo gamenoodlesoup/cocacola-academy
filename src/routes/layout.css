@@ -1,0 +1,295 @@
+@import 'tailwindcss';
+
+/* Coca-Cola Recycling Game - Global Styles */
+
+:root {
+	/* Coca-Cola Brand Color Palette */
+	--color-red: #F40009;
+	--color-coca-cola-red: #DF1725;
+	--color-dark-green: #3C5142;
+	--color-georgia-green: #A4CDA8;
+	--color-green: #74AC4B;
+	--color-yellow: #F8C226;
+	--color-cream: #FCE9CC;
+
+	/* Functional Colors */
+	--color-background: #ffffff;
+	--color-stroke: #000000;
+	--color-error: #DF1725;
+	--color-success: #74AC4B;
+	--color-gold: #F8C226;
+	--color-text: #333333;
+	--color-text-light: #666666;
+
+	/* Stroke Width */
+	--stroke-width: 4px;
+
+	/* Touch Targets */
+	--min-touch-target: 44px;
+
+	/* Animations */
+	--transition-fast: 0.2s;
+	--transition-normal: 0.3s;
+	--transition-slow: 0.5s;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family:
+		'Segoe UI',
+		-apple-system,
+		BlinkMacSystemFont,
+		Roboto,
+		Oxygen,
+		Ubuntu,
+		Cantarell,
+		'Fira Sans',
+		'Droid Sans',
+		'Helvetica Neue',
+		sans-serif;
+	background: var(--color-background);
+	color: var(--color-text);
+	overflow-x: hidden;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+/* Prevent pull-to-refresh on mobile */
+body {
+	overscroll-behavior: none;
+}
+
+/* Game container */
+.game-container {
+	min-height: 100vh;
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Hand-drawn stroke style */
+.stroke-style {
+	border: var(--stroke-width) solid var(--color-stroke);
+}
+
+/* Primary button style */
+.btn-primary {
+	background: var(--color-red);
+	color: white;
+	border: var(--stroke-width) solid var(--color-stroke);
+	padding: 1rem 2rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	cursor: pointer;
+	box-shadow: 6px 6px 0 var(--color-stroke);
+	transition: all var(--transition-fast);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+	min-height: var(--min-touch-target);
+	border-radius: 12px;
+}
+
+.btn-primary:hover {
+	transform: translate(2px, 2px);
+	box-shadow: 4px 4px 0 var(--color-stroke);
+}
+
+.btn-primary:active {
+	transform: translate(6px, 6px);
+	box-shadow: 0 0 0 var(--color-stroke);
+}
+
+/* Secondary button style */
+.btn-secondary {
+	background: var(--color-green);
+	color: white;
+	border: var(--stroke-width) solid var(--color-stroke);
+	padding: 1rem 2rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	cursor: pointer;
+	box-shadow: 6px 6px 0 var(--color-stroke);
+	transition: all var(--transition-fast);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+	min-height: var(--min-touch-target);
+	border-radius: 12px;
+}
+
+.btn-secondary:hover {
+	transform: translate(2px, 2px);
+	box-shadow: 4px 4px 0 var(--color-stroke);
+}
+
+.btn-secondary:active {
+	transform: translate(6px, 6px);
+	box-shadow: 0 0 0 var(--color-stroke);
+}
+
+/* Card style */
+.card {
+	background: white;
+	border: var(--stroke-width) solid var(--color-stroke);
+	border-radius: 12px;
+	padding: 1.5rem;
+}
+
+/* Animations */
+@keyframes pulse {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+}
+
+@keyframes bounce {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+@keyframes shake {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(-10px) rotate(-5deg);
+	}
+	75% {
+		transform: translateX(10px) rotate(5deg);
+	}
+}
+
+@keyframes float-up {
+	from {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateY(-50px) scale(1.5);
+	}
+}
+
+@keyframes glow {
+	0%,
+	100% {
+		box-shadow:
+			0 0 20px rgba(255, 215, 0, 0.5),
+			6px 6px 0 black;
+	}
+	50% {
+		box-shadow:
+			0 0 40px rgba(255, 215, 0, 0.8),
+			6px 6px 0 black;
+	}
+}
+
+.animate-pulse {
+	animation: pulse 1.5s ease-in-out infinite;
+}
+
+.animate-bounce {
+	animation: bounce 2s infinite;
+}
+
+.animate-shake {
+	animation: shake 0.5s;
+}
+
+/* iPad Optimizations */
+@media (max-width: 1024px) {
+	.btn-primary,
+	.btn-secondary {
+		padding: 0.875rem 1.5rem;
+		font-size: 1.25rem;
+	}
+}
+
+/* Landscape adjustments */
+@media (orientation: landscape) and (max-height: 800px) {
+	.btn-primary,
+	.btn-secondary {
+		padding: 0.75rem 1.25rem;
+		font-size: 1.1rem;
+	}
+}
+
+/* ===== 9-Patch / 9-Slice Scalable Backgrounds ===== */
+
+/*
+ * Chalkboard message box — wood frame with green center.
+ * border-image-slice carves the frame out of msg_box.png (3596×2377).
+ * 'fill' keeps the dark-green chalkboard center as the background.
+ * Rendered frame thickness is set via border-width.
+ */
+.nine-patch-box {
+	border-style: solid;
+	border-width: 48px 40px 44px 40px;
+	border-image-source: url('/assets/box/msg_box.png');
+	border-image-slice: 13% 8% 12% 8% fill;
+	border-image-repeat: stretch;
+	border-radius: 0;
+	background: none;
+	box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.35);
+}
+
+/*
+ * Button 9-patch — SVGs (190×70 viewBox), 15 px corner radius, 5 px drop-shadow.
+ * The border-image preserves corners + noise texture while stretching the centre.
+ */
+.nine-patch-btn {
+	border-style: solid;
+	border-width: 18px 18px 22px 18px;
+	border-image-slice: 29% 11% 36% 11% fill;
+	border-image-repeat: stretch;
+	border-radius: 0;
+	background: none;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.35rem;
+	color: white;
+	font-weight: 800;
+	font-size: 1.1rem;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+	padding: 0.3rem 1rem;
+	transition: filter 0.15s, transform 0.15s;
+	filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+.nine-patch-btn:hover {
+	filter: drop-shadow(0 0 8px rgba(255,255,255,0.25)) drop-shadow(3px 5px 8px rgba(0,0,0,0.4));
+	transform: scale(1.05) translateY(-2px);
+}
+
+.nine-patch-btn:active {
+	filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.3));
+	transform: scale(0.96);
+}
+
+.nine-patch-btn-green  { border-image-source: url('/assets/buttons/green_button.svg'); }
+.nine-patch-btn-red    { border-image-source: url('/assets/buttons/red_button.svg'); }
+.nine-patch-btn-blue   { border-image-source: url('/assets/buttons/blue_button.svg'); }
+.nine-patch-btn-orange { border-image-source: url('/assets/buttons/orange_button.svg'); }

@@ -1,0 +1,273 @@
+{
+	"_description": "Asset manifest for Coca-Cola Academy Recycling Game. Each entry has a human-readable name and description for easy identification and renaming.",
+	"icons": [
+		{
+			"file": "battery.svg",
+			"name": "Battery",
+			"description": "AA-style battery with lightning bolt. Dark body, blue/green accents, yellow bolt.",
+			"mapsToItemId": "battery",
+			"category": "other",
+			"source": "src/lib/assets/icons/battery.svg",
+			"isPlaceholder": false
+		},
+		{
+			"file": "cardboard-box.svg",
+			"name": "Cardboard Box",
+			"description": "3D isometric open cardboard box. Gold/brown faces with dark interior.",
+			"mapsToItemId": "cardboard-box",
+			"category": "paper",
+			"source": "src/lib/assets/icons/cardboard_box.svg",
+			"isPlaceholder": false
+		},
+		{
+			"file": "glass-bottle.svg",
+			"name": "Glass Bottle",
+			"description": "Dark glass bottle with gold metal cap. Classic tall bottle silhouette.",
+			"mapsToItemId": "glass-bottle",
+			"category": "glass",
+			"source": "src/lib/assets/icons/glass_bottle.svg",
+			"isPlaceholder": false
+		},
+		{
+			"file": "aluminum-can.svg",
+			"name": "Aluminum / Gold Can",
+			"description": "Ornate soda can with gold and green decorative bands. Detailed illustrated style.",
+			"mapsToItemId": "aluminum-can",
+			"category": "metal",
+			"source": "src/lib/assets/icons/gold_can.svg",
+			"isPlaceholder": false
+		},
+		{
+			"file": "steel-can.svg",
+			"name": "Steel / Fish Can",
+			"description": "Tall sardine/fish tin can. Dark body with white stripes and green label.",
+			"mapsToItemId": "steel-can",
+			"category": "metal",
+			"source": "src/lib/assets/icons/fish_can.svg",
+			"isPlaceholder": false
+		},
+		{
+			"file": "milk-carton.svg",
+			"name": "Milk Carton",
+			"description": "Milk carton with folded triangular top. Silver body, red accent stripe.",
+			"mapsToItemId": "milk-carton",
+			"category": "paper",
+			"source": "src/lib/assets/icons/milk_carton.svg",
+			"isPlaceholder": false
+		},
+		{
+			"file": "newspaper.svg",
+			"name": "Newspaper",
+			"description": "Folded newspaper pages with teal headline bar and visible text columns.",
+			"mapsToItemId": "newspaper",
+			"category": "paper",
+			"source": "src/lib/assets/icons/newsapaper.svg",
+			"isPlaceholder": false
+		},
+		{
+			"file": "plastic-bag.svg",
+			"name": "Plastic Bag",
+			"description": "Crumpled plastic shopping bag with debris. Orange/yellow body, brown accents.",
+			"mapsToItemId": "plastic-bag",
+			"category": "plastic",
+			"source": "src/lib/assets/icons/plastic_bag.svg",
+			"isPlaceholder": false
+		},
+		{
+			"file": "plastic-bottle.svg",
+			"name": "Plastic Bottle (White Detergent)",
+			"description": "White cleaning/detergent bottle with gold cap and green label stripe.",
+			"mapsToItemId": "plastic-bottle",
+			"category": "plastic",
+			"source": "src/lib/assets/icons/white_bottle.svg",
+			"isPlaceholder": false
+		},
+		{
+			"file": "water-bottle.svg",
+			"name": "Water Bottle (Yellow Cleaning)",
+			"description": "Cleaning product bottle. White body with green/gold label accents.",
+			"mapsToItemId": "water-bottle",
+			"category": "plastic",
+			"source": "src/lib/assets/icons/yellow_bottle.svg",
+			"isPlaceholder": false
+		},
+		{
+			"file": "tissue.svg",
+			"name": "Used Tissue / Crumpled Paper",
+			"description": "Ball of crumpled paper/tissue. Dark outlines with light gray fill.",
+			"mapsToItemId": "tissue",
+			"category": "paper",
+			"source": "src/lib/assets/icons/trash_paper.svg",
+			"isPlaceholder": false
+		},
+		{
+			"file": "plastic-container.svg",
+			"name": "Plastic Container",
+			"description": "Rectangular tupperware-style container with snap lid. Light blue body.",
+			"mapsToItemId": "plastic-container",
+			"category": "plastic",
+			"source": null,
+			"isPlaceholder": true
+		},
+		{
+			"file": "magazine.svg",
+			"name": "Magazine",
+			"description": "Glossy magazine with red cover, yellow title bar, and photo area.",
+			"mapsToItemId": "magazine",
+			"category": "paper",
+			"source": null,
+			"isPlaceholder": true
+		},
+		{
+			"file": "food-waste.svg",
+			"name": "Food Waste",
+			"description": "Banana peel, apple core, and veggie scraps. Warm organic tones.",
+			"mapsToItemId": "food-waste",
+			"category": "organic",
+			"source": null,
+			"isPlaceholder": true
+		},
+		{
+			"file": "styrofoam.svg",
+			"name": "Styrofoam Container",
+			"description": "Open styrofoam takeout box with visible foam texture dots and crack.",
+			"mapsToItemId": "styrofoam",
+			"category": "plastic",
+			"source": null,
+			"isPlaceholder": true
+		},
+		{
+			"file": "light-bulb.svg",
+			"name": "Light Bulb",
+			"description": "Classic incandescent bulb with visible filament, metal base, and warm glass.",
+			"mapsToItemId": "light-bulb",
+			"category": "glass",
+			"source": null,
+			"isPlaceholder": true
+		},
+		{
+			"file": "pizza-box-greasy.svg",
+			"name": "Greasy Pizza Box",
+			"description": "Open cardboard pizza box with dark grease stains and red logo on lid.",
+			"mapsToItemId": "pizza-box-greasy",
+			"category": "paper",
+			"source": null,
+			"isPlaceholder": true
+		},
+		{
+			"file": "chip-bag.svg",
+			"name": "Chip Bag",
+			"description": "Crinkly red snack bag with yellow label area and crumpled top seal.",
+			"mapsToItemId": "chip-bag",
+			"category": "other",
+			"source": null,
+			"isPlaceholder": true
+		},
+		{
+			"file": "disposable-cup.svg",
+			"name": "Disposable Coffee Cup",
+			"description": "Paper coffee cup with cardboard sleeve, plastic lid, and steam wisps.",
+			"mapsToItemId": "disposable-cup",
+			"category": "paper",
+			"source": null,
+			"isPlaceholder": true
+		},
+		{
+			"file": "plastic-straw.svg",
+			"name": "Plastic Straw",
+			"description": "Red bendy straw with accordion flex section and white stripe pattern.",
+			"mapsToItemId": "plastic-straw",
+			"category": "plastic",
+			"source": null,
+			"isPlaceholder": true
+		}
+	],
+	"buttons": [
+		{
+			"file": "back_button.svg",
+			"name": "Back / Return",
+			"description": "Red illustrated button with left-pointing arrow. Hand-drawn wobbly border.",
+			"usage": "Navigation — return to previous screen / map"
+		},
+		{
+			"file": "redo_button.svg",
+			"name": "Redo / Forward",
+			"description": "Red illustrated button with forward arrows. Hand-drawn wobbly border.",
+			"usage": "Redo last action"
+		},
+		{
+			"file": "undo_button.svg",
+			"name": "Undo / Backward",
+			"description": "Red illustrated button with backward arrows. Hand-drawn wobbly border.",
+			"usage": "Undo last action"
+		},
+		{
+			"file": "setting_button.svg",
+			"name": "Settings / Gear",
+			"description": "Red illustrated button with gear/cog icon. Hand-drawn wobbly border.",
+			"usage": "Open settings menu"
+		},
+		{
+			"file": "blue_button.svg",
+			"name": "Blue Action Button",
+			"description": "Rounded rectangle, blue gradient (#019AF1→#007CC2), glossy highlights, noise texture.",
+			"usage": "Secondary / informational actions"
+		},
+		{
+			"file": "green_button.svg",
+			"name": "Green Action Button",
+			"description": "Rounded rectangle, green gradient (#09CE7C→#2D9A6D), glossy highlights, noise texture.",
+			"usage": "Recyclable choice / positive confirmation"
+		},
+		{
+			"file": "red_button.svg",
+			"name": "Red Action Button",
+			"description": "Rounded rectangle, red gradient (#EB474C→#D25A5D), glossy highlights, noise texture.",
+			"usage": "Not-recyclable choice / negative / cancel"
+		},
+		{
+			"file": "orange_button.svg",
+			"name": "Orange Action Button",
+			"description": "Rounded rectangle, orange gradient (#FF6B00→#D96916), glossy highlights, noise texture.",
+			"usage": "Warning / attention actions"
+		}
+	],
+	"unmappedIcons": [
+		{
+			"file": "books.svg",
+			"name": "Stack of Books",
+			"description": "Three stacked colorful books (green, gold, teal covers). Could be a school/paper item.",
+			"location": "src/lib/assets/icons/books.svg"
+		},
+		{
+			"file": "clock.svg",
+			"name": "Alarm Clock",
+			"description": "Vintage alarm clock with two bells. Complex overlapping shapes. Could be home/e-waste item.",
+			"location": "src/lib/assets/icons/clock.svg"
+		},
+		{
+			"file": "computer_monitor.svg",
+			"name": "Computer Monitor",
+			"description": "Desktop monitor with stand. Dark body, gray screen. Could be e-waste item.",
+			"location": "src/lib/assets/icons/computer_monitor.svg"
+		},
+		{
+			"file": "cotton_buds.svg",
+			"name": "Cotton Buds",
+			"description": "Two cotton swabs crossed in X-shape. Silver sticks, white ends. Could be hygiene/other item.",
+			"location": "src/lib/assets/icons/cotton_buds.svg"
+		},
+		{
+			"file": "fish_bone.svg",
+			"name": "Fish Bone",
+			"description": "Complete fish skeleton. White bones. Could represent food waste / organic.",
+			"location": "src/lib/assets/icons/fish_bone.svg"
+		},
+		{
+			"file": "old_shirt.svg",
+			"name": "Old Shirt",
+			"description": "Worn/used shirt. Dark fabric with golden/olive collar. Could be textile recycling item.",
+			"location": "src/lib/assets/icons/old_shirt.svg"
+		}
+	]
+}
