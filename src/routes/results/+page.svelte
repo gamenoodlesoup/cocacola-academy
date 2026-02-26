@@ -240,12 +240,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		min-height: 100vh;
-		min-height: 100dvh;
+		height: 100vh;
+		height: 100dvh;
+		max-width: 100vw;
 		background: linear-gradient(135deg, var(--color-dark-green, #3C5142) 0%, var(--color-green, #74AC4B) 100%);
 		padding: 2rem;
 		position: relative;
 		overflow: hidden;
+		box-sizing: border-box;
 	}
 
 	.results-card {

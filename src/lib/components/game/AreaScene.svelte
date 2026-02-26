@@ -32,15 +32,12 @@
 
 <div class="area-scene">
 	<!-- Area Background -->
-	<div class="area-background" style="background: {area.gradient || 'linear-gradient(180deg, #87CEEB, #98FB98)'}">
-		{#if area.scenery}
-			{#each sceneryPositions(area.scenery) as s}
-				<span
-					class="scenery-deco"
-					style="left: {s.x}%; top: {s.y}%; font-size: {s.size}rem; transform: rotate({s.rotation}deg);"
-				>{s.emoji}</span>
-			{/each}
+	<div class="area-background">
+		{#if area.background}
+			<img class="area-bg-image" src={area.background} alt="{area.name} background" />
+			<img class="area-bg-center" src={area.background} alt="" />
 		{/if}
+		<div class="area-bg-overlay" style="background: {area.gradient || 'linear-gradient(180deg, #87CEEB, #98FB98)'}"></div>
 	</div>
 
 	<!-- Back Button -->
@@ -97,6 +94,9 @@
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
+		max-width: 100vw;
+		max-height: 100vh;
+		max-height: 100dvh;
 		animation: areaFadeIn 0.5s ease-out;
 	}
 
@@ -115,15 +115,65 @@
 		position: absolute;
 		inset: 0;
 		z-index: 0;
+		overflow: hidden;
 	}
 
-	.scenery-deco {
+	.area-bg-image {
 		position: absolute;
-		opacity: 0.25;
-		pointer-events: none;
-		user-select: none;
-		filter: blur(0.5px);
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
 		z-index: 0;
+		filter: blur(12px) brightness(0.7);
+		transform: scale(1.05);
+		animation: bgZoomIn 0.8s ease-out;
+	}
+
+	.area-bg-center {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 70%;
+		height: 70%;
+		object-fit: contain;
+		z-index: 1;
+		border-radius: 16px;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+		pointer-events: none;
+		animation: centerImgIn 0.6s ease-out 0.2s both;
+	}
+
+	@keyframes centerImgIn {
+		from {
+			opacity: 0;
+			transform: translate(-50%, -50%) scale(0.9);
+		}
+		to {
+			opacity: 1;
+			transform: translate(-50%, -50%) scale(1);
+		}
+	}
+
+	@keyframes bgZoomIn {
+		from {
+			transform: scale(1.15);
+			opacity: 0;
+		}
+		to {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+
+	.area-bg-overlay {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		opacity: 0.15;
+		pointer-events: none;
 	}
 
 	.back-button {
@@ -195,8 +245,8 @@
 	.scene-item {
 		position: absolute;
 		transform: translate(-50%, -50%);
-		width: 68px;
-		height: 68px;
+		width: 100px;
+		height: 100px;
 		border-radius: 0;
 		background: none;
 		border: none;
@@ -378,8 +428,8 @@
 	/* iPad Landscape */
 	@media (max-height: 700px) and (orientation: landscape) {
 		.scene-item {
-			width: 54px;
-			height: 54px;
+			width: 76px;
+			height: 76px;
 		}
 
 		.area-info {
@@ -396,8 +446,8 @@
 	/* Larger screens: bigger touch targets */
 	@media (min-width: 768px) {
 		.scene-item {
-			width: 78px;
-			height: 78px;
+			width: 110px;
+			height: 110px;
 		}
 
 		.back-btn-icon {

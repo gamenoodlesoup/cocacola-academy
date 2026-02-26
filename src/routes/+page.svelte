@@ -51,8 +51,9 @@
 
 <style>
 	.start-screen {
-		min-height: 100vh;
-		min-height: 100dvh;
+		height: 100vh;
+		height: 100dvh;
+		max-width: 100vw;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -61,6 +62,7 @@
 		padding: 2rem;
 		position: relative;
 		overflow: hidden;
+		box-sizing: border-box;
 	}
 
 	.background-pattern {

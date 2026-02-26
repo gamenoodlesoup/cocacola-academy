@@ -118,15 +118,17 @@
 
 <style>
 	.selection-screen {
-		min-height: 100vh;
-		min-height: 100dvh;
+		height: 100vh;
+		height: 100dvh;
+		max-width: 100vw;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		padding: 1.5rem;
 		background: linear-gradient(160deg, #f8f9fa 0%, #e9ecef 100%);
 		position: relative;
-		overflow-y: auto;
+		overflow: hidden;
+		box-sizing: border-box;
 	}
 
 	.bg-pattern {
@@ -200,6 +202,10 @@
 		z-index: 1;
 		opacity: 0;
 		transition: opacity 0.4s ease 0.2s;
+		flex: 1;
+		min-height: 0;
+		overflow-y: auto;
+		padding-bottom: 1rem;
 	}
 
 	.games-grid.visible {

@@ -163,13 +163,18 @@
 
 <style>
 	.tutorial-screen {
-		min-height: 100vh;
-		min-height: 100dvh;
+		height: 100vh;
+		height: 100dvh;
+		max-height: 100vh;
+		max-height: 100dvh;
+		max-width: 100vw;
 		display: flex;
 		flex-direction: column;
-		padding: 2rem;
+		padding: 1.5rem;
 		position: relative;
 		transition: background 0.4s ease;
+		overflow: hidden;
+		box-sizing: border-box;
 	}
 
 	.skip-button {
@@ -189,7 +194,8 @@
 		display: flex;
 		justify-content: center;
 		gap: 1rem;
-		margin: 2rem 0;
+		margin: 0.75rem 0;
+		flex-shrink: 0;
 	}
 
 	.progress-dot {
@@ -221,6 +227,8 @@
 		max-width: 700px;
 		margin: 0 auto;
 		width: 100%;
+		min-height: 0;
+		overflow: hidden;
 	}
 
 	.step-content {
@@ -241,8 +249,8 @@
 	}
 
 	.step-emoji {
-		font-size: 100px;
-		margin-bottom: 1.5rem;
+		font-size: clamp(48px, 10vh, 100px);
+		margin-bottom: 1rem;
 		animation: bounce 2s infinite;
 	}
 
@@ -257,18 +265,18 @@
 	}
 
 	.step-title {
-		font-size: 3rem;
+		font-size: clamp(1.8rem, 4vh, 3rem);
 		font-weight: 900;
 		color: #333;
-		margin: 0 0 1rem 0;
+		margin: 0 0 0.5rem 0;
 		text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 	}
 
 	.step-description {
-		font-size: 1.5rem;
+		font-size: clamp(1rem, 2vh, 1.5rem);
 		color: #555;
 		margin: 0;
-		line-height: 1.6;
+		line-height: 1.4;
 		max-width: 500px;
 		margin: 0 auto;
 	}
@@ -278,8 +286,8 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 1rem;
-		margin-top: 2rem;
+		gap: 0.75rem;
+		margin-top: 1rem;
 	}
 
 	.example-item-card {
@@ -332,8 +340,9 @@
 		display: flex;
 		justify-content: space-between;
 		gap: 1rem;
-		margin-top: 2rem;
+		margin-top: auto;
 		padding: 0 1rem;
+		flex-shrink: 0;
 	}
 
 	.nav-spacer {
@@ -389,7 +398,8 @@
 		text-align: center;
 		color: #999;
 		font-size: 0.9rem;
-		margin-top: 1.5rem;
+		margin-top: 0.5rem;
+		flex-shrink: 0;
 	}
 
 	/* iPad Portrait */

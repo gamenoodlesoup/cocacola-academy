@@ -279,10 +279,13 @@
 	.game-screen {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
-		min-height: 100dvh;
+		height: 100vh;
+		height: 100dvh;
+		max-width: 100vw;
+		overflow: hidden;
 		background: linear-gradient(180deg, var(--color-cream, #FCE9CC) 0%, #f5f0e8 100%);
 		position: relative;
+		box-sizing: border-box;
 	}
 
 	.pause-button {
@@ -312,6 +315,8 @@
 		flex: 1;
 		display: flex;
 		position: relative;
+		max-width: 100vw;
+		overflow: hidden;
 	}
 
 	/* Zoom Transition */
