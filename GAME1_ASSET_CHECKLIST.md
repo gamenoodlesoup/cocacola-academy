@@ -1,7 +1,8 @@
 # Game 1: Explore & Sort — Complete Asset & Feature Checklist
 
-> **Last Updated:** February 26, 2026
+> **Last Updated:** February 27, 2026
 > **Game Route:** `/game` (main), `/tutorial`, `/results`, `/games` (hub)
+> **Deployment:** Azure Static Web Apps (SWA) — auto-deploys on push to `main`
 > **Status Legend:** ✅ Done | ⚠️ Partial / Placeholder | ❌ Missing
 
 ---
@@ -9,7 +10,7 @@
 ## Table of Contents
 
 1. [Item Assets (20 items)](#1-item-assets-20-items)
-2. [Area / Map Assets (6 areas + 1 map)](#2-area--map-assets)
+2. [Area / Map Assets (4 areas + 1 map)](#2-area--map-assets)
 3. [Button Assets](#3-button-assets)
 4. [UI Icon Assets](#4-ui-icon-assets)
 5. [Hand Gesture Assets](#5-hand-gesture-assets)
@@ -18,43 +19,44 @@
 8. [Screen-by-Screen Feature Checklist](#8-screen-by-screen-feature-checklist)
 9. [Game Mechanics Checklist](#9-game-mechanics-checklist)
 10. [Data & Backend Checklist](#10-data--backend-checklist)
-11. [Summary: What's Blocking a Playable Game](#11-summary-whats-blocking-a-playable-game)
+11. [Deployment Checklist](#11-deployment-checklist)
+12. [Summary: What's Blocking a Playable Game](#12-summary-whats-blocking-a-playable-game)
 
 ---
 
 ## 1. Item Assets (20 items)
 
-Each item needs **two versions**: a small scene icon (~80×80px) and a large popup close-up (~200×200px). Currently only one SVG per item exists at `/static/assets/items/`, used for both.
+Each item needs **two versions**: a small scene icon (~100×100px) and a large popup close-up (~200×200px). Currently only one SVG per item exists at `/static/assets/items/`, used for both.
 
 ### Recyclable Items (10)
 
 | # | Item ID | Name | Area | Scene SVG (`/assets/items/`) | Popup SVG (close-up) | Has Real Art | Notes |
 |---|---------|------|------|------|------|------|------|
-| 1 | `plastic-bottle` | Plastic Bottle | Park | ✅ `plastic-bottle.svg` | ⚠️ Same file | ✅ Mapped from `white_bottle.svg` | |
-| 2 | `aluminum-can` | Aluminum Can | Park | ✅ `aluminum-can.svg` | ⚠️ Same file | ✅ Mapped from `gold_can.svg` | |
-| 3 | `glass-bottle` | Glass Bottle | Beach | ✅ `glass-bottle.svg` | ⚠️ Same file | ✅ Mapped from `glass_bottle.svg` | |
-| 4 | `cardboard-box` | Cardboard Box | Home | ✅ `cardboard-box.svg` | ⚠️ Same file | ✅ Mapped from `cardboard_box.svg` | |
-| 5 | `newspaper` | Newspaper | School | ✅ `newspaper.svg` | ⚠️ Same file | ✅ Mapped from `newsapaper.svg` | |
-| 6 | `steel-can` | Steel Can | Market | ✅ `steel-can.svg` | ⚠️ Same file | ✅ Mapped from `fish_can.svg` | |
-| 7 | `milk-carton` | Milk Carton | Home | ✅ `milk-carton.svg` | ⚠️ Same file | ✅ Mapped from `milk_carton.svg` | |
-| 8 | `plastic-container` | Plastic Container | Market | ✅ `plastic-container.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
-| 9 | `magazine` | Magazine | School | ✅ `magazine.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
-| 10 | `water-bottle` | Water Bottle | Beach | ✅ `water-bottle.svg` | ⚠️ Same file | ✅ Mapped from `yellow_bottle.svg` | |
+| 1 | `plastic-bottle` | Plastic Bottle | Kitchen | ✅ `plastic-bottle.svg` | ⚠️ Same file | ✅ Mapped from `white_bottle.svg` | |
+| 2 | `aluminum-can` | Aluminum Can | Kitchen | ✅ `aluminum-can.svg` | ⚠️ Same file | ✅ Mapped from `gold_can.svg` | |
+| 3 | `glass-bottle` | Glass Bottle | Kitchen | ✅ `glass-bottle.svg` | ⚠️ Same file | ✅ Mapped from `glass_bottle.svg` | |
+| 4 | `cardboard-box` | Cardboard Box | Living Room | ✅ `cardboard-box.svg` | ⚠️ Same file | ✅ Mapped from `cardboard_box.svg` | |
+| 5 | `newspaper` | Newspaper | Living Room | ✅ `newspaper.svg` | ⚠️ Same file | ✅ Mapped from `newsapaper.svg` | |
+| 6 | `steel-can` | Steel Can | Kitchen | ✅ `steel-can.svg` | ⚠️ Same file | ✅ Mapped from `fish_can.svg` | |
+| 7 | `milk-carton` | Milk Carton | Kitchen | ✅ `milk-carton.svg` | ⚠️ Same file | ✅ Mapped from `milk_carton.svg` | |
+| 8 | `plastic-container` | Plastic Container | Bathroom | ✅ `plastic-container.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
+| 9 | `magazine` | Magazine | Bedroom | ✅ `magazine.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
+| 10 | `water-bottle` | Water Bottle | Bedroom | ✅ `water-bottle.svg` | ⚠️ Same file | ✅ Mapped from `yellow_bottle.svg` | |
 
 ### Non-Recyclable Items (10)
 
 | # | Item ID | Name | Area | Scene SVG (`/assets/items/`) | Popup SVG (close-up) | Has Real Art | Notes |
 |---|---------|------|------|------|------|------|------|
-| 11 | `food-waste` | Food Waste | Park | ✅ `food-waste.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
-| 12 | `plastic-bag` | Plastic Bag | Street | ✅ `plastic-bag.svg` | ⚠️ Same file | ✅ Mapped from `plastic_bag.svg` | |
-| 13 | `styrofoam` | Styrofoam | Market | ✅ `styrofoam.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
-| 14 | `battery` | Battery | Home | ✅ `battery.svg` | ⚠️ Same file | ✅ Mapped from `battery.svg` | |
-| 15 | `light-bulb` | Light Bulb | School | ✅ `light-bulb.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
-| 16 | `pizza-box-greasy` | Greasy Pizza Box | Street | ✅ `pizza-box-greasy.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
-| 17 | `chip-bag` | Chip Bag | Beach | ✅ `chip-bag.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
-| 18 | `disposable-cup` | Disposable Coffee Cup | Street | ✅ `disposable-cup.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
-| 19 | `tissue` | Used Tissue | Park | ✅ `tissue.svg` | ⚠️ Same file | ✅ Mapped from `trash_paper.svg` | |
-| 20 | `plastic-straw` | Plastic Straw | Beach | ✅ `plastic-straw.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
+| 11 | `food-waste` | Food Waste | Kitchen | ✅ `food-waste.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
+| 12 | `plastic-bag` | Plastic Bag | Living Room | ✅ `plastic-bag.svg` | ⚠️ Same file | ✅ Mapped from `plastic_bag.svg` | |
+| 13 | `styrofoam` | Styrofoam | Living Room | ✅ `styrofoam.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
+| 14 | `battery` | Battery | Bedroom | ✅ `battery.svg` | ⚠️ Same file | ✅ Mapped from `battery.svg` | |
+| 15 | `light-bulb` | Light Bulb | Living Room | ✅ `light-bulb.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
+| 16 | `pizza-box-greasy` | Greasy Pizza Box | Kitchen | ✅ `pizza-box-greasy.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
+| 17 | `chip-bag` | Chip Bag | Living Room | ✅ `chip-bag.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
+| 18 | `disposable-cup` | Disposable Coffee Cup | Bedroom | ✅ `disposable-cup.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
+| 19 | `tissue` | Used Tissue | Bathroom | ✅ `tissue.svg` | ⚠️ Same file | ✅ Mapped from `trash_paper.svg` | |
+| 20 | `plastic-straw` | Plastic Straw | Bathroom | ✅ `plastic-straw.svg` | ⚠️ Same file | ❌ **PLACEHOLDER** | Needs real illustrated SVG |
 
 ### Item Asset Summary
 
@@ -64,7 +66,7 @@ Each item needs **two versions**: a small scene icon (~80×80px) and a large pop
 | Items with real illustrated SVGs | **11** |
 | Items with placeholder SVGs | **9** |
 | Items with separate popup close-up | **0** (all reuse scene SVG) |
-| **Items per area** | Park: 4, Beach: 4, Street: 3, School: 3, Market: 3, Home: 3 |
+| **Items per area** | Kitchen: 7, Living Room: 6, Bedroom: 4, Bathroom: 3 |
 
 ### Items Still Needing Real Art (9 placeholder SVGs)
 
@@ -115,33 +117,29 @@ Per GAME_FLOW.md, the item popup should show a ~200×200px **close-up** detail i
 |-------|------|----------|--------|-------|
 | World/city map | `map.png` | `/static/assets/areas/map.png` | ✅ Exists & used | Used in `MapOverview.svelte` as background |
 
-### Area Backgrounds (6 areas)
+### Area Backgrounds (4 areas)
 
-Per GAME_FLOW.md: "Rich, detailed, maximalist composition matching art style" — one full-screen illustrated background per area.
+Each area now has a unique illustrated background PNG. `AreaScene.svelte` renders a **blurred full-bleed copy** (blur 12px, brightness 0.7) behind a **centered sharp copy** at 70% size with rounded corners and drop shadow, plus a gradient tint overlay at 15% opacity.
 
-| # | Area | Expected File | Location | Status | Notes |
-|---|------|---------------|----------|--------|-------|
-| 1 | Park 🌳 | `park-bg.png` or `park-bg.svg` | `/static/assets/areas/` | ❌ **Missing** | Currently using CSS gradient + emoji scenery |
-| 2 | Beach 🏖️ | `beach-bg.png` or `beach-bg.svg` | `/static/assets/areas/` | ❌ **Missing** | Currently using CSS gradient + emoji scenery |
-| 3 | Street 🏙️ | `street-bg.png` or `street-bg.svg` | `/static/assets/areas/` | ❌ **Missing** | Currently using CSS gradient + emoji scenery |
-| 4 | School 🏫 | `school-bg.png` or `school-bg.svg` | `/static/assets/areas/` | ❌ **Missing** | Currently using CSS gradient + emoji scenery |
-| 5 | Market 🛒 | `market-bg.png` or `market-bg.svg` | `/static/assets/areas/` | ❌ **Missing** | Currently using CSS gradient + emoji scenery |
-| 6 | Home 🏠 | `home-bg.png` or `home-bg.svg` | `/static/assets/areas/` | ❌ **Missing** | Currently using CSS gradient + emoji scenery |
+| # | Area | File | Location | Status | Notes |
+|---|------|------|----------|--------|-------|
+| 1 | Living Room 🛋️ | `living_room.png` | `/static/assets/areas/` | ✅ **Done** | Blurred bg + centered sharp image |
+| 2 | Bathroom 🚿 | `bathroom.png` | `/static/assets/areas/` | ✅ **Done** | Blurred bg + centered sharp image |
+| 3 | Kitchen 🍳 | `kitchen.png` | `/static/assets/areas/` | ✅ **Done** | Blurred bg + centered sharp image |
+| 4 | Bedroom 🛏️ | `bedroom.png` | `/static/assets/areas/` | ✅ **Done** | Blurred bg + centered sharp image |
 
-> **Note:** `areas.json` has `"background": "/assets/areas/room.png"` for all 6 areas, and `room.png` exists, but it is **never rendered** by `AreaScene.svelte` — the component only uses `area.gradient`. The `room.png` appears to be a single generic room image, not 6 unique area backgrounds.
+> **Note:** Legacy files `room.png` and `map.png` also exist in `/static/assets/areas/`. The `room.png` is no longer used; each area now points to its own specific background in `areas.json`.
 
-### Area Map Pin Icons (6)
+### Area Map Pin Icons (4)
 
 Per GAME_FLOW.md: illustrated area tiles on the map, not emoji.
 
 | # | Area | Current | Status | Notes |
 |---|------|---------|--------|-------|
-| 1 | Park | 🌳 emoji | ❌ **Needs illustrated pin** | |
-| 2 | Beach | 🏖️ emoji | ❌ **Needs illustrated pin** | |
-| 3 | Street | 🏙️ emoji | ❌ **Needs illustrated pin** | |
-| 4 | School | 🏫 emoji | ❌ **Needs illustrated pin** | |
-| 5 | Market | 🛒 emoji | ❌ **Needs illustrated pin** | |
-| 6 | Home | 🏠 emoji | ❌ **Needs illustrated pin** | |
+| 1 | Living Room | 🛋️ emoji | ❌ **Needs illustrated pin** | |
+| 2 | Bathroom | 🚿 emoji | ❌ **Needs illustrated pin** | |
+| 3 | Kitchen | 🍳 emoji | ❌ **Needs illustrated pin** | |
+| 4 | Bedroom | 🛏️ emoji | ❌ **Needs illustrated pin** | |
 
 ---
 
@@ -323,8 +321,8 @@ Per GAME_FLOW.md: hand-drawn outline style, 3-4px black stroke. No faces/avatars
 | "Choose Your Challenge" title | ✅ | |
 | 3 game cards with stagger animation | ✅ | CSS slide-up |
 | Game 1 card (Explore & Sort) | ✅ | Navigates to `/tutorial` |
-| Game 2 card (Plastic Scanner) | ⚠️ | Card exists, route `/game/scanner` **missing** |
-| Game 3 card (Home Lab) | ⚠️ | Card exists, route `/game/lab` **missing** |
+| Game 2 card (Plastic Scanner) | ✅ | Card exists, route `/game/scanner` implemented (~1043 lines) |
+| Game 3 card (Home Lab) | ✅ | Card exists, route `/game/lab` implemented (~1385 lines) |
 | Card illustrations / thumbnails | ❌ | All emoji icons |
 | Difficulty stars + duration badges | ✅ | Emoji-based |
 | Back button to `/` | ✅ | |
@@ -334,8 +332,8 @@ Per GAME_FLOW.md: hand-drawn outline style, 3-4px black stroke. No faces/avatars
 | Feature | Status | Notes |
 |---------|--------|-------|
 | Map background image | ✅ | Uses `map.png` |
-| 6 clickable area pins | ✅ | |
-| Area pin illustrations | ❌ | Emoji icons (🌳🏖️ etc.) |
+| 4 clickable area pins | ✅ | Living Room, Bathroom, Kitchen, Bedroom |
+| Area pin illustrations | ❌ | Emoji icons (🛋️🚿🍳🛏️) |
 | Area name labels | ✅ | |
 | Progress counter per area (e.g., "3/8") | ✅ | |
 | Completed area checkmark | ✅ | ✅ emoji overlay |
@@ -348,8 +346,8 @@ Per GAME_FLOW.md: hand-drawn outline style, 3-4px black stroke. No faces/avatars
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Rich illustrated background | ❌ | CSS gradient + emoji scenery |
-| Items scattered naturally in scene | ✅ | Positioned via `item.position` |
+| Rich illustrated background | ✅ | **Done** — blurred full-bleed bg (blur 12px, brightness 0.7) + centered sharp copy at 70% with rounded corners + gradient overlay at 15% opacity |
+| Items scattered naturally in scene | ✅ | Positioned via `item.position`, enlarged to ~100px base |
 | Item SVG images | ✅ | 20 items, 11 real art / 9 placeholder |
 | Item glow/sparkle hint (undiscovered) | ✅ | CSS `glowPulse` animation |
 | Item floating/bobbing animation | ✅ | CSS `itemBob` |
@@ -437,7 +435,7 @@ Per GAME_FLOW.md: hand-drawn outline style, 3-4px black stroke. No faces/avatars
 | Mechanic | Status | Notes |
 |----------|--------|-------|
 | Map → area → popup → feedback → map loop | ✅ | Fully wired game phases |
-| 6 areas with unique item sets | ✅ | 20 items across 6 areas |
+| 4 areas with unique item sets | ✅ | 20 items across 4 areas (Kitchen:7, Living Room:6, Bedroom:4, Bathroom:3) |
 | Recyclable / Not Recyclable binary choice | ✅ | |
 | +10 points per correct | ✅ | |
 | -1 life per incorrect (3 lives max) | ✅ | |
@@ -467,7 +465,7 @@ Per GAME_FLOW.md: hand-drawn outline style, 3-4px black stroke. No faces/avatars
 | Time bonus at game end | Scoring System | ❌ Not implemented |
 | Timer countdown mode option | Game Over Conditions | ❌ Timer is elapsed-only |
 | Progressive area unlock | Map Overview | ❌ All areas open from start |
-| Item count per area matches spec | Map Areas table | ⚠️ Spec: 50 total (8+10+8+7+9+8), Actual: 20 total (4+4+3+3+3+3) |
+| Item count per area matches spec | Map Areas table | ⚠️ Spec: 50 total, Actual: 20 total (7+6+4+3 across 4 areas) |
 
 ---
 
@@ -506,31 +504,47 @@ Per GAME_FLOW.md: hand-drawn outline style, 3-4px black stroke. No faces/avatars
 
 ---
 
-## 11. Summary: What's Blocking a Playable Game
+## 11. Deployment & Infrastructure Checklist
+
+| Feature | Status | Notes |
+|---------|--------|-------|
+| SvelteKit adapter-static | ✅ | Outputs to `build/`, SPA fallback `index.html` |
+| Prerender + SSR off | ✅ | `src/routes/+layout.ts` exports `prerender = true`, `ssr = false` |
+| Azure Static Web Apps (Free tier) | ✅ | Live at `*.azurestaticapps.net` |
+| GitHub Actions CI/CD | ✅ | `.github/workflows/azure-static-web-apps-wonderful-water-0acc84300.yml` |
+| pnpm 10 + Node 22 in pipeline | ✅ | Installed via GitHub Actions |
+| SWA routing config | ✅ | `staticwebapp.config.json` with SPA fallback |
+| Custom domain | ❌ | Not configured yet |
+| Environment variables / secrets | ✅ | `AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_WATER_0ACC84300` in repo |
+
+---
+
+## 12. Summary: What's Blocking a Playable Game
 
 ### The game IS playable right now with:
 - ✅ Full game loop (map → area → popup → feedback → results)
 - ✅ 20 items with data (names, descriptions, recyclable status, fun facts)
-- ✅ 6 areas with map navigation
+- ✅ 4 areas with unique illustrated backgrounds (blurred + centered sharp image)
 - ✅ Scoring, lives, streaks
 - ✅ 11 real illustrated item SVGs + 9 placeholder SVGs
 - ✅ Map background image
 - ✅ 3 button SVGs (back, green, red)
-- ✅ Responsive iPad layout
+- ✅ Responsive iPad layout (100dvh, no scroll, centered)
 - ✅ Touch controls + haptic feedback
+- ✅ Game 2 (Plastic Scanner) and Game 3 (Home Lab) routes implemented
+- ✅ Azure Static Web Apps deployment (live temp URL)
 
 ### Critical Missing (Blocks polished release)
 
 | Priority | Category | Count | Details |
 |----------|----------|-------|---------|
 | 🔴 HIGH | Placeholder item SVGs | **9** | plastic-container, magazine, food-waste, styrofoam, light-bulb, pizza-box-greasy, chip-bag, disposable-cup, plastic-straw |
-| 🔴 HIGH | Area background illustrations | **6** | All areas use CSS gradients + emoji instead of illustrated backgrounds |
 | 🔴 HIGH | Sound effects | **10+** | Zero audio in the entire game |
 | 🟡 MED | Hand gesture assets (static) | **6** | No hand illustrations at all |
 | 🟡 MED | Hand gesture animations | **9** | No animated hand sequences |
 | 🟡 MED | i18n integration | **All screens** | Paraglide exists but no component uses translations |
 | 🟡 MED | UI icons replacing emoji | **~20** | Hearts, timer, fire, stars, categories, etc. |
-| 🟡 MED | Area pin illustrations | **6** | Map pins are emoji |
+| 🟡 MED | Area pin illustrations | **4** | Map pins are emoji |
 | 🟡 MED | Branding (logo, title graphic) | **2** | No Coca-Cola logo or styled title |
 | 🟡 MED | Area completion bonus (+20) | **1** | Scoring not matching spec |
 | 🟡 MED | Item count gap vs spec | **30 items** | Spec calls for ~50 items, only 20 exist |
@@ -540,6 +554,7 @@ Per GAME_FLOW.md: hand-drawn outline style, 3-4px black stroke. No faces/avatars
 | 🟢 LOW | Feedback timing (1s/2s) | **1** | Currently 1.8s for both |
 | 🟢 LOW | Reverse zoom-out animation | **1** | Returning to map is instant |
 | 🟢 LOW | Azure backend | **All** | Login, sessions, dashboard, sync |
+| 🟢 LOW | Custom domain | **1** | Using default azurestaticapps.net URL |
 
 ### Asset Counts Summary
 
@@ -547,8 +562,8 @@ Per GAME_FLOW.md: hand-drawn outline style, 3-4px black stroke. No faces/avatars
 |------------|--------|--------|-----|
 | Item scene SVGs (real art) | 11 | 20 | **9** |
 | Item popup close-ups | 0 | 20 (optional) | **20** |
-| Area backgrounds | 0 | 6 | **6** |
-| Area pin icons | 0 | 6 | **6** |
+| Area backgrounds | **4** | 4 | **0** ✅ |
+| Area pin icons | 0 | 4 | **4** |
 | Map image | 1 | 1 | **0** |
 | Button SVGs | 3 used | 3+ needed | **~3** |
 | Hand gestures (static) | 0 | 6 | **6** |
@@ -556,7 +571,7 @@ Per GAME_FLOW.md: hand-drawn outline style, 3-4px black stroke. No faces/avatars
 | UI icons (HUD, feedback, etc.) | 0 | ~20 | **~20** |
 | Branding assets | 1 (favicon) | 3 | **2** |
 | Sound effects | 0 | 10+ | **10+** |
-| **TOTAL ASSETS** | **~16** | **~125+** | **~109+** |
+| **TOTAL ASSETS** | **~20** | **~120+** | **~100+** |
 
 ### Unmapped Icon Assets Available (not yet used)
 
@@ -564,12 +579,19 @@ These exist in `src/lib/assets/icons/` but are not assigned to any game item:
 
 | File | Description | Could Be |
 |------|-------------|----------|
-| `books.svg` | Stack of 3 colorful books | School area item |
-| `clock.svg` | Vintage alarm clock | Home area item |
-| `computer_monitor.svg` | Desktop monitor | Home/e-waste item |
-| `cotton_buds.svg` | Two cotton swabs | Other/hygiene item |
-| `fish_bone.svg` | Fish skeleton | Food waste item |
-| `old_shirt.svg` | Worn shirt | Textile recycling item |
+| `books.svg` | Stack of 3 colorful books | Bedroom area item |
+| `clock.svg` | Vintage alarm clock | Bedroom area item |
+| `computer_monitor.svg` | Desktop monitor | Living Room/e-waste item |
+| `cotton_buds.svg` | Two cotton swabs | Bathroom/hygiene item |
+| `fish_bone.svg` | Fish skeleton | Kitchen/food waste item |
+| `old_shirt.svg` | Worn shirt | Bedroom/textile recycling item |
+
+### Recent Wins (completed this session)
+- ✅ Area backgrounds: Added 4 illustrated PNGs with blurred + centered sharp rendering
+- ✅ Item icons enlarged to ~100px base size
+- ✅ All screens fixed to 100dvh / no-scroll / centered
+- ✅ Viewport width constrained (max-width: 100vw, overflow-x: hidden)
+- ✅ Azure Static Web Apps deployment with GitHub Actions CI/CD
 
 ---
 
