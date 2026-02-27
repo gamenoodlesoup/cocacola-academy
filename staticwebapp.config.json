@@ -1,0 +1,14 @@
+{
+	"navigationFallback": {
+		"rewrite": "/index.html",
+		"exclude": ["/assets/**", "/robots.txt", "*.svg", "*.png", "*.jpg", "*.webp", "*.ico"]
+	},
+	"globalHeaders": {
+		"Cache-Control": "public, max-age=3600"
+	},
+	"mimeTypes": {
+		".json": "application/json",
+		".svg": "image/svg+xml",
+		".webp": "image/webp"
+	}
+}

@@ -1,26 +1,24 @@
 <script lang="ts">
 	interface Props {
-		score: number;
 		lives: number;
 		maxLives: number;
 		itemsIdentified: number;
 		totalItems: number;
 		streak?: number;
-		areasCompleted?: number;
-		totalAreas?: number;
 		elapsedSeconds?: number;
+		isPaused?: boolean;
+		onTogglePause?: () => void;
 	}
 
 	let {
-		score,
 		lives,
 		maxLives,
 		itemsIdentified,
 		totalItems,
 		streak = 0,
-		areasCompleted = 0,
-		totalAreas = 6,
-		elapsedSeconds = 0
+		elapsedSeconds = 0,
+		isPaused = false,
+		onTogglePause
 	}: Props = $props();
 
 	let progress = $derived((itemsIdentified / totalItems) * 100);
@@ -33,34 +31,25 @@
 </script>
 
 <div class="top-bar">
-	<!-- Score -->
-	<div class="score-section">
-		<div class="score-label">SCORE</div>
-		<div class="score-value">{score}</div>
-	</div>
-
-	<!-- Timer -->
-	<div class="timer-section">
-		<span class="timer-icon">⏱️</span>
-		<span class="timer-value">{formatTime(elapsedSeconds)}</span>
-	</div>
-
-	<!-- Progress -->
-	<div class="progress-section">
-		<div class="progress-label">{itemsIdentified} / {totalItems}</div>
-		<div class="progress-bar">
-			<div class="progress-fill" style="width: {progress}%"></div>
+	<div class="center-group">
+		<!-- Timer -->
+		<div class="timer-section">
+			<span class="timer-icon">⏱️</span>
+			<span class="timer-value">{formatTime(elapsedSeconds)}</span>
 		</div>
-		{#if streak >= 3}
-			<div class="streak-badge">🔥 {streak}</div>
-		{/if}
-	</div>
 
-	<!-- Areas + Lives -->
-	<div class="right-section">
-		<div class="areas-badge">
-			🗺️ {areasCompleted}/{totalAreas}
+		<!-- Progress -->
+		<div class="progress-section">
+			<div class="progress-label">{itemsIdentified} / {totalItems}</div>
+			<div class="progress-bar">
+				<div class="progress-fill" style="width: {progress}%"></div>
+			</div>
+			{#if streak >= 3}
+				<div class="streak-badge">🔥 {streak}</div>
+			{/if}
 		</div>
+
+		<!-- Lives -->
 		<div class="lives-section">
 			<div class="lives-hearts">
 				{#each Array(maxLives) as _, i}
@@ -71,46 +60,35 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Pause -->
+	<button class="pause-btn" onclick={onTogglePause} aria-label={isPaused ? 'Resume game' : 'Pause game'}>
+		{isPaused ? '▶️' : '⏸️'}
+	</button>
 </div>
 
 <style>
 	.top-bar {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
-		padding: 1rem 1.5rem;
+		padding: 0.75rem 1.5rem;
 		background: white;
 		border-bottom: 4px solid black;
-		gap: 1.5rem;
-		flex-wrap: wrap;
 	}
 
-	.score-section {
+	.center-group {
 		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	.score-label,
-	.lives-label {
-		font-size: 0.85rem;
-		font-weight: bold;
-		color: #666;
-		letter-spacing: 0.05em;
-	}
-
-	.score-value {
-		font-size: 2.5rem;
-		font-weight: 900;
-		color: var(--color-coca-cola-red, #DF1725);
-		font-family: 'Courier New', monospace;
-		line-height: 1;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		flex: 1;
 	}
 
 	.timer-section {
 		display: flex;
 		align-items: center;
 		gap: 0.3rem;
+		flex-shrink: 0;
 	}
 
 	.timer-icon {
@@ -178,26 +156,10 @@
 		}
 	}
 
-	.right-section {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		gap: 0.3rem;
-	}
-
-	.areas-badge {
-		font-size: 0.85rem;
-		font-weight: bold;
-		background: var(--color-cream, #FCE9CC);
-		border: 2px solid black;
-		border-radius: 12px;
-		padding: 0.15rem 0.5rem;
-		color: var(--color-dark-green, #3C5142);
-	}
-
 	.lives-section {
 		display: flex;
 		align-items: center;
+		flex-shrink: 0;
 	}
 
 	.lives-hearts {
@@ -219,14 +181,33 @@
 		transform: scale(0.9);
 	}
 
+	.pause-btn {
+		flex-shrink: 0;
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		border: 3px solid black;
+		background: white;
+		font-size: 1.3rem;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.15s ease;
+	}
+
+	.pause-btn:hover {
+		transform: scale(1.1);
+	}
+
+	.pause-btn:active {
+		transform: scale(0.95);
+	}
+
 	/* iPad Landscape */
 	@media (max-height: 700px) and (orientation: landscape) {
 		.top-bar {
-			padding: 0.75rem 1.5rem;
-		}
-
-		.score-value {
-			font-size: 2rem;
+			padding: 0.5rem 1.5rem;
 		}
 
 		.progress-bar {
@@ -241,14 +222,8 @@
 	/* Small screens */
 	@media (max-width: 600px) {
 		.top-bar {
-			padding: 0.75rem 1rem;
+			padding: 0.5rem 1rem;
 			gap: 1rem;
-		}
-
-		.progress-section {
-			order: 3;
-			flex-basis: 100%;
-			max-width: 100%;
 		}
 	}
 </style>

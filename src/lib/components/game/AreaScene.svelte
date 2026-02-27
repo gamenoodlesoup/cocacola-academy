@@ -18,6 +18,12 @@
 
 	let remainingCount = $derived(areaProgress.total - areaProgress.found);
 
+	// Clamp item positions so they stay fully inside the container
+	// Items use translate(-50%,-50%) so we need ~10% margin from edges
+	function clamp(val: number, min: number, max: number): number {
+		return Math.min(Math.max(val, min), max);
+	}
+
 	// Deterministic pseudo-random positions for scenery decorations
 	function sceneryPositions(scenery: string[]): { emoji: string; x: number; y: number; size: number; rotation: number }[] {
 		return scenery.map((emoji, i) => ({
@@ -60,7 +66,7 @@
 			<button
 				class="scene-item interactive-icon"
 				class:identified
-				style="left: {item.position.x}%; top: {item.position.y}%;"
+				style="left: {clamp(item.position.x, 10, 90)}%; top: {clamp(item.position.y, 10, 90)}%;"
 				onclick={() => !identified && onItemTap(item.id)}
 				disabled={identified}
 				aria-label={identified ? `${item.name} (identified)` : `Inspect ${item.name}`}
@@ -238,8 +244,13 @@
 
 	.items-container {
 		position: absolute;
-		inset: 0;
+		top: 15%;
+		left: 15%;
+		width: 70%;
+		height: 70%;
 		z-index: 10;
+		overflow: hidden;
+		border-radius: 16px;
 	}
 
 	.scene-item {

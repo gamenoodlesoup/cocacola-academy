@@ -146,21 +146,15 @@
 <div class="game-screen">
 	<!-- Top Bar -->
 	<TopBar
-		score={gameState.score}
 		lives={gameState.lives}
 		maxLives={gameState.maxLives}
 		itemsIdentified={gameState.totalItemsIdentified}
 		totalItems={gameState.totalItems}
 		streak={gameState.currentStreak}
-		areasCompleted={gameState.completedAreas.length}
-		totalAreas={areas.length}
 		{elapsedSeconds}
+		isPaused={showPauseMenu}
+		onTogglePause={togglePause}
 	/>
-
-	<!-- Pause Button -->
-	<button class="pause-button" onclick={togglePause} aria-label="Pause game">
-		⏸️
-	</button>
 
 	<!-- Game Content -->
 	<div class="game-content">
@@ -286,29 +280,6 @@
 		background: linear-gradient(180deg, var(--color-cream, #FCE9CC) 0%, #f5f0e8 100%);
 		position: relative;
 		box-sizing: border-box;
-	}
-
-	.pause-button {
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		width: 50px;
-		height: 50px;
-		border-radius: 50%;
-		background: white;
-		border: 3px solid black;
-		font-size: 1.5rem;
-		cursor: pointer;
-		box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
-		transition: all 0.2s;
-		z-index: 20;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.pause-button:hover {
-		transform: scale(1.1);
 	}
 
 	.game-content {
